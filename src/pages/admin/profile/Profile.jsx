@@ -112,9 +112,7 @@ export default function Profile() {
                         Role
                       </p>
                       <p className="mt-1 text-sm font-semibold text-gray-800">
-                        {userData.role === 1 || userData.role === '1'
-                          ? 'Admin'
-                          : 'User'}
+                        {userData.role === 1 || userData.role === '2' ?  'user' : 'admin'}
                       </p>
                     </div>
 
