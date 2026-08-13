@@ -1,0 +1,13 @@
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 7px 20px;
+  cursor: pointer;
+  border-radius: 7px;
+}
