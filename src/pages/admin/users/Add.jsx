@@ -14,6 +14,7 @@ export default function Add() {
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [DOB, setDOB] = useState("");
+  const [password, setPassword] = useState("");
   const [image, setImage] = useState(null);
   const [role, setRole] = useState("");
   const [address, setAddress] = useState("");
@@ -33,6 +34,7 @@ export default function Add() {
     formData.append("email", email);
     formData.append("mobile", mobile);
     formData.append("DOB", DOB);
+    formData.append("password", password);
     formData.append("role", role);
     formData.append("address", address);
     formData.append("image", image);
@@ -217,6 +219,24 @@ export default function Add() {
                     }
                     required
                     placeholder="example@email.com"
+                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-50"
+                  />
+                </div>
+                 <div>
+                  <label className="mb-2 block text-sm font-semibold text-gray-800">
+                    Password
+                    <span className="ml-1 text-red-500">*</span>
+                  </label>
+
+                  <input
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={(e) =>
+                      setPassword (e.target.value)
+                    }
+                    required
+                    placeholder="Enter password"
                     className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-50"
                   />
                 </div>
