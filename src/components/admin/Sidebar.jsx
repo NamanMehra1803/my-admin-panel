@@ -20,33 +20,24 @@ export default function Sidebar() {
           top: 0;
           width: 255px;
           height: 100vh;
-
-          background: #ffffff;
+          background: #fff;
           border-right: 1px solid #e5e7eb;
-
           z-index: 9999;
-
           display: flex;
           flex-direction: column;
-
           overflow-y: auto;
-          overflow-x: hidden;
-
-          box-shadow: 4px 0 20px rgba(15, 23, 42, 0.05);
+          box-sizing: border-box;
         }
 
-        /* BRAND */
         .admin-brand {
           height: 72px;
           min-height: 72px;
-
           display: flex;
           align-items: center;
-
           gap: 12px;
           padding: 0 18px;
-
           border-bottom: 1px solid #f1f5f9;
+          box-sizing: border-box;
         }
 
         .admin-brand img {
@@ -69,14 +60,12 @@ export default function Sidebar() {
         }
 
         .admin-brand span {
-          margin-top: 2px;
           color: #94a3b8;
           font-size: 9px;
           font-weight: 700;
           letter-spacing: 1px;
         }
 
-        /* NAV */
         .admin-nav {
           padding: 18px 10px;
         }
@@ -84,37 +73,25 @@ export default function Sidebar() {
         .admin-nav-label {
           padding: 0 12px;
           margin-bottom: 10px;
-
           color: #94a3b8;
           font-size: 10px;
           font-weight: 800;
-          letter-spacing: 1px;
         }
 
         .admin-nav a {
-          position: relative;
-
           display: flex;
           align-items: center;
-
+          gap: 12px;
           width: 100%;
           height: 46px;
-
-          gap: 12px;
           padding: 0 13px;
           margin-bottom: 5px;
-
-          box-sizing: border-box;
-
           border-radius: 11px;
-
           color: #64748b;
           text-decoration: none;
-
           font-size: 13px;
           font-weight: 600;
-
-          transition: 0.2s ease;
+          box-sizing: border-box;
         }
 
         .admin-nav a:hover {
@@ -125,37 +102,17 @@ export default function Sidebar() {
         .admin-nav a.active {
           background: #eff6ff;
           color: #2563eb;
-          font-weight: 700;
-        }
-
-        .admin-nav a.active::before {
-          content: "";
-
-          position: absolute;
-          left: 0;
-          top: 9px;
-
-          width: 3px;
-          height: 28px;
-
-          background: #2563eb;
-          border-radius: 0 5px 5px 0;
         }
 
         .admin-nav-icon {
           width: 25px;
           min-width: 25px;
-
           display: flex;
-          align-items: center;
           justify-content: center;
-
           font-size: 17px;
         }
 
-        /* =========================
-           TABLET
-        ========================= */
+        /* TABLET */
 
         @media (max-width: 992px) {
           .admin-sidebar {
@@ -163,28 +120,23 @@ export default function Sidebar() {
           }
         }
 
-        /* =========================
-           PHONE
-        ========================= */
+        /* MOBILE */
 
         @media (max-width: 768px) {
-
           .admin-sidebar {
             width: 64px !important;
             min-width: 64px;
-
             display: flex !important;
             visibility: visible !important;
             opacity: 1 !important;
+            transform: none !important;
           }
 
           .admin-brand {
             width: 64px;
             height: 64px;
             min-height: 64px;
-
             padding: 0;
-
             justify-content: center;
           }
 
@@ -193,52 +145,32 @@ export default function Sidebar() {
             height: 38px;
           }
 
-          .admin-brand div {
-            display: none;
+          .admin-brand div,
+          .admin-nav-label,
+          .admin-nav a > span:last-child {
+            display: none !important;
           }
 
           .admin-nav {
-            width: 64px;
             padding: 14px 7px;
-          }
-
-          .admin-nav-label {
-            display: none;
           }
 
           .admin-nav a {
             width: 50px;
             height: 48px;
-
             padding: 0;
             margin: 0 auto 7px;
-
             justify-content: center;
-
-            border-radius: 11px;
           }
 
           .admin-nav-icon {
             width: auto;
             min-width: auto;
-
             font-size: 18px;
-          }
-
-          .admin-nav a > span:last-child {
-            display: none;
-          }
-
-          .admin-nav a.active::before {
-            left: -7px;
-            height: 28px;
           }
         }
 
-        /* SMALL PHONE */
-
         @media (max-width: 480px) {
-
           .admin-sidebar {
             width: 58px !important;
             min-width: 58px;
@@ -249,7 +181,6 @@ export default function Sidebar() {
           }
 
           .admin-nav {
-            width: 58px;
             padding: 12px 5px;
           }
 
@@ -266,22 +197,15 @@ export default function Sidebar() {
 
       <aside className="admin-sidebar">
 
-        {/* LOGO */}
         <div className="admin-brand">
-
-          <img
-            src="/img/logo.png"
-            alt="MyShop Logo"
-          />
+          <img src="/img/logo.png" alt="MyShop Logo" />
 
           <div>
             <strong>MyShop</strong>
             <span>ADMIN CONSOLE</span>
           </div>
-
         </div>
 
-        {/* NAVIGATION */}
         <nav className="admin-nav">
 
           <div className="admin-nav-label">
@@ -301,9 +225,7 @@ export default function Sidebar() {
                 {icon}
               </span>
 
-              <span>
-                {label}
-              </span>
+              <span>{label}</span>
             </NavLink>
           ))}
 
